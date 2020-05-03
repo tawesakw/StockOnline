@@ -1,0 +1,136 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Apitron.PDF.Kit" Version="2.0.25" />
+    <PackageReference Include="FirebaseDatabase.net" Version="4.0.4" />
+    <PackageReference Include="Microcharts.Forms" Version="0.8.5-pre" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    
+    <PackageReference Include="Syncfusion.Xamarin.Pdf" Version="17.4.0.51" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="17.4.0.51" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="4.1.0-beta" />
+    
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
+    
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.379-pre1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\ListProductAdmin.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ListReport.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ListUserAdmin.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ListWaitingQueue.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ManageProduct.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Manager_SummaryOrder.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\OrderEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ProductAdmin.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\SummaryOrder.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\UserAdmin.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ViewDailyOrder.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ViewFavoritesMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ViewOrder.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ListViewPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Order.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Product.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ViewSummaryByDate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\" />
+    <Folder Include="Control\" />
+    <Folder Include="View\NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\ListAllMaterialFood.xaml.cs">
+      <DependentUpon>ListAllMaterialFood.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\ListMaterialAdmin.xaml.cs">
+      <DependentUpon>ListMaterialAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\ListViewAllOrder.xaml.cs">
+      <DependentUpon>ListViewAllOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\ListViewOrder.xaml.cs">
+      <DependentUpon>ListViewOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\MaterialFoodDetail.xaml.cs">
+      <DependentUpon>MaterialFoodDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\MaterialFoodAdmin.xaml.cs">
+      <DependentUpon>MaterialFoodAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\MaterialDetail.xaml.cs">
+      <DependentUpon>MaterialDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\OrderEntryPageSelect.xaml.cs">
+      <DependentUpon>OrderEntryPageSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\OrderEntryPageLine.xaml.cs">
+      <DependentUpon>OrderEntryPageLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\PrintPageCustomerT.xaml.cs">
+      <DependentUpon>PrintPageCustomerT.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\MaterialAdmin.xaml.cs">
+      <DependentUpon>MaterialAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\ViewFavoritesMenu.xaml.cs">
+      <DependentUpon>ViewFavoritesMenu.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="View\Manager_SummaryOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>

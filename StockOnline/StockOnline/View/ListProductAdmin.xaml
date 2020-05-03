@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:viewmodels="clr-namespace:StockOnline.Models;assembly=StockOnline"
+             x:Class="StockOnline.View.ListProductAdmin" Title="หน้าบริหารจัดการ Menu">
+        
+        
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add New Product" Order="Secondary"  Priority="0" 
+                     Clicked="OnNoteAddedClicked" />
+
+        <ToolbarItem x:Name="item_exit" Text="Exit"
+            Order="Secondary" Clicked="exitClick"
+            Priority="1" />
+
+        <ToolbarItem Text="Login Again" Order="Secondary" Priority="2"  Clicked="Login_Click" />
+
+
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+        
+        <StackLayout>
+            <Label Text="หน้าบริหารจัดการสินค้า"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+
+        <StackLayout>
+            <ListView x:Name="listView"
+              Margin="20"
+              ItemSelected="OnListViewItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Name}"></Label>
+
+                                <Label Text="{Binding Details}"></Label>
+
+                                <Label Text="{Binding CostPerUnit}"></Label>
+                            </StackLayout>
+
+                        </ViewCell>
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

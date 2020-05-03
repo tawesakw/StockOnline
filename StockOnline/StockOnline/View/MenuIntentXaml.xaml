@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+x:Class="StockOnline.View.MenuIntentXaml"
+Title="Home"  >
+
+    <ContentPage.ToolbarItems>
+        <!--
+        <ToolbarItem x:Name="item_receive" Text="รับ Order "
+            
+            Order="Primary" Clicked="receiveOrderkClick"
+            Priority="0" />
+        -->
+        <ToolbarItem x:Name="item_view" Text="View Order"
+            
+            Order="Secondary" Clicked="viewOrderClick"
+            Priority="0" />
+<!--
+        <ToolbarItem x:Name="item_outofstock" Text="View Out of stock"
+            
+            Order="Secondary" Clicked="outOfStockClick"
+            Priority="0" />
+-->
+        <!--
+        <ToolbarItem x:Name="item_product" Text="Print Order"
+            
+            Order="Secondary" Clicked="productClick"
+            Priority="0" />
+-->
+    </ContentPage.ToolbarItems>
+
+
+</ContentPage>

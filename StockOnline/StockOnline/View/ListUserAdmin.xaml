@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.ListUserAdmin">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add New User"
+                     Clicked="OnNoteAddedClicked" Order="Secondary" Priority="0"  />
+
+        <ToolbarItem x:Name="item_exit" Text="Exit"
+
+            Order="Secondary" Clicked="exitClick"
+            Priority="1" />
+
+        <ToolbarItem Text="Login Again" Order="Secondary" Priority="2"  Clicked="Login_Click" />
+        
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout>
+                <Label Text="หน้าบริหารจัดการ User "
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout>
+                <ListView x:Name="listView"
+              Margin="20"
+              ItemSelected="OnListViewItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding UserName}"></Label>
+
+                                    <Label Text="{Binding Description}"></Label>
+
+           
+                                </StackLayout>
+
+                            </ViewCell>
+
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

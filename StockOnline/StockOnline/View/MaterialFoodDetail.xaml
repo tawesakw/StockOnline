@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.MaterialFoodDetail">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="0,10,0,0">
+
+                <!--
+                <StackLayout Margin="0,10,0,0" >
+                    <Label Text="จัดการวัตถุดิบ" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" /> -->
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="*" />
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="Lbl_FoodStr" Text="อาหาร"  Grid.Row="0" Grid.Column="0" />
+                    <Label x:Name="Lbl_FoodLabel" Text="" Grid.Row="0" Grid.Column="1"/>
+                    <Label x:Name="Lbl_MaterialStr" Text="วัตถุดิบที่เลือก" Grid.Row="1" Grid.Column="0"/>
+                    <Label x:Name="Lbl_MaterialLabel" Text=""  Grid.Row="1" Grid.Column="1"/>
+                    <ListView x:Name="listMatrialView" ItemSelected="OnListViewItemSelected"   Grid.Row="2" Grid.Column="1" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding NameEn}"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Label x:Name="Lbl_UnitType" Text="หน่วย" Grid.Row="3" Grid.Column="0" />
+                    <Label x:Name="Lbl_UnitDisplay" Text="" Grid.Row="3" Grid.Column="1"/>
+                    <Label x:Name="Lbl_Quantity" Text="จำนวน"  Grid.Row="4" Grid.Column="0"/>
+                    <Entry x:Name="Entry_Quantity" Placeholder="จำนวน" Grid.Row="4" Grid.Column="1" />
+                    <!--   </StackLayout>
+                <StackLayout x:Name="FooterStack" VerticalOptions="Fill"> -->
+                    <Button x:Name="bt_Confirm" Text="Confirm" Margin="15,15,0,0" Clicked="OnSaveButtonClicked" Grid.Row="5" Grid.Column="1" ></Button>
+                    <Button x:Name="bt_Cancel" Text="Cancel" Margin="15,15,0,0" Clicked="CancelOrder_Click" Grid.Row="6" Grid.Column="1"></Button>
+                    <Button x:Name="bt_AddNewMat" Text="Add New Material" Margin="15,15,0,0" Clicked="OnAddButtonClicked" Grid.Row="7" Grid.Column="1"></Button>
+                    <Button x:Name="bt_Back" Text="กลับไปหน้าแรก" Margin="15,15,0,0" Clicked="BackButtonClicked" Grid.Row="8" Grid.Column="1"></Button>
+
+                    <!--   </StackLayout> -->
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

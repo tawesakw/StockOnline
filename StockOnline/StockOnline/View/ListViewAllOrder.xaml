@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.ListViewAllOrder" Title="รายการรอดำเนินการ">
+
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Exit" Order="Secondary" Priority="0" Clicked="Logout_Click" />
+        <ToolbarItem Text="Back to Login" Order="Secondary" Priority="2"  Clicked="Login_Click" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>            
+            <StackLayout>
+                <Label Text="รายการรอดำเนินการ"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="เลือกดูรายการตาม"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+              
+                <Picker x:Name="picker" Title="เลือกดูรายการตาม " TitleColor="Red"  SelectedIndexChanged="selectViewSelected">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Queue No</x:String>
+                            <x:String>Food</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="listViewByQueue"  Margin="20" IsVisible="false">
+                    <ListView.Footer>
+                        <Label Text="Total" x:Name="SummaryViewByQueue" />
+                    </ListView.Footer>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding QuequNoDisplay}"></Label>
+                                   <Label Text="{Binding Name}"></Label>
+                                    <Label Text="{Binding QuantityStr} "></Label>
+                                    <Label Text="{Binding CostPerUnitStr}"></Label>
+                                </StackLayout>
+                            </ViewCell>                     
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView x:Name="listViewByFood"  Margin="20" IsVisible="false">
+                        <ListView.Footer>
+                        <Label Text="Total" x:Name="SummaryViewByFood" />
+                        </ListView.Footer>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>                                        
+                                        <Label Text="{Binding Name}"></Label>
+                                        <Label Text="{Binding QuantityStr}"></Label>
+                                        
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            <!--
+            <StackLayout>
+                <Picker ItemsSource="{Binding DeviceList}" x:Name="deviceList"
+                    Title="Select Device"
+                    ItemDisplayBinding="{Binding .}"
+                    SelectedItem="{Binding SelectedDevice}" />
+                <Entry Text="{Binding PrintMessage}" IsVisible="False"
+                   Placeholder="Message"/>
+                <Button Text="Print"
+                    Command="{Binding PrintCommand}" />
+            </StackLayout>
+            -->
+            
+        </StackLayout>     
+            
+    </ContentPage.Content>
+</ContentPage>

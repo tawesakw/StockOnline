@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.ViewDailyOrder">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="item_exit" Text="Exit"
+            Order="Secondary" Clicked="exitClick"
+            Priority="0" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <StackLayout>
+            <Label Text="Summary Order"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+        <StackLayout>
+            <ListView x:Name="listView"
+              Margin="20"
+              ItemSelected="OnListViewItemSelected">
+
+                <!--
+                <ListView.Header>
+                    <StackLayout Padding="10,5,0,5" BackgroundColor="#cccccc">
+                        <Label Text="" x:Name="summaryTxt"></Label>
+                
+                    </StackLayout>
+                </ListView.Header>
+                -->
+                <!--
+                <ListView.Footer>
+                    <Label Text="Total" x:Name="SummaryView" />
+                </ListView.Footer>
+                -->
+                <ListView.ItemTemplate>                    
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding QuequNo}"></Label>                                
+                                <Label Text="{Binding Name}"></Label>
+                                <Label Text="{Binding Quantity}"></Label>
+                                <Label Text="{Binding CostPerUnit}"></Label>
+                                <Label Text="{Binding OrderDate}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+              
+            </ListView>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

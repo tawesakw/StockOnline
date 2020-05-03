@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.LoginPage">
+    <StackLayout x:Name="MasterLayout">
+
+        <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
+            <Image x:Name="LoginIcon"  Source="Pos_Preview.png" Margin="0,80,0,0"></Image>
+        </StackLayout>
+        
+        <StackLayout x:Name="LoginEntriesStack" VerticalOptions="StartAndExpand">
+            <StackLayout.Padding>
+            <Thickness x:Name="pageContentPadding">
+                    <Thickness.Left>10</Thickness.Left>
+                    <Thickness.Top>0</Thickness.Top>
+                    <Thickness.Right>10</Thickness.Right>
+                    <Thickness.Bottom>0</Thickness.Bottom>
+                </Thickness>
+
+            </StackLayout.Padding>
+
+            <ActivityIndicator x:Name="ActivitySpinner" Color="Black" IsRunning="true" />
+
+            <Label x:Name="Lbl_Username" Text="Username"/>
+            <Entry x:Name="Entry_Username" Placeholder="Username" />
+
+            <Label x:Name="Lbl_Password"  Text="Password"/>
+            <Entry x:Name="Entry_Password" Placeholder="Password" IsPassword="True" />
+            <Button x:Name="Btn_Signin" Text="Sign in" Clicked="SigninProcedure"/>
+
+        </StackLayout>
+
+        <Label x:Name="Lbl_Version" Text="Version 01/05/2020"/>
+
+        <ActivityIndicator x:Name="activityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Color="Blue" />
+
+    </StackLayout>
+    
+    
+</ContentPage>

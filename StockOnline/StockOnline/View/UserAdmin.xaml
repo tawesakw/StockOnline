@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.UserAdmin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Margin="20,35,20,20">
+                    <Label Text="รายการ User " 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+                    <Label x:Name="Lbl_Username" Text="Username"/>
+                    <Entry x:Name="Entry_UserName" Placeholder="User Name"  />
+
+                    <Label x:Name="Lbl_Password" Text="Password"/>
+                    <Entry x:Name="Entry_Password" Placeholder="Password"  IsPassword="True"  />
+
+                    <Label x:Name="Lbl_RePassword" Text="Re-Password"/>
+                    <Entry x:Name="Entry_RePassword" Placeholder="Re Password" IsPassword="True"   />
+
+                    <Label x:Name="Lbl_Detail" Text="Detail"/>
+                    <Entry x:Name="Entry_Detail" Placeholder="รายละเอียดอื่นๆ"  />
+
+                    <Label x:Name="Lbl_Level" Text="User Level"/>
+                    <Picker x:Name="picker" Title="เลือก MENU" TitleColor="Red"   >                        
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Order</x:String>
+                                <x:String>Manager</x:String>
+                                <x:String>Admin</x:String>
+                                <x:String>ViewOrder</x:String>
+       
+                            </x:Array>
+                        </Picker.ItemsSource>                   
+                    </Picker>
+                    
+                    
+
+                </StackLayout>
+
+                <StackLayout x:Name="FooterStack" VerticalOptions="Fill">
+                    <Button x:Name="bt_Confirm" Text="Confirm" Margin="15,15,0,0" Clicked="OnSaveButtonClicked"></Button>
+                    <Button x:Name="bt_Cancel" Text="Cancel" Margin="15,15,0,0" Clicked="CancelOrder_Click"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

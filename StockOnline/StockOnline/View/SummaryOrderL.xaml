@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"            
+             xmlns:viewmodels="clr-namespace:StockOnline.Models;assembly=StockOnline"
+             x:Class="StockOnline.View.SummaryOrderL" Title="Summary Order Line Man">
+
+
+    <ContentPage.BindingContext>
+        <viewmodels:PrintPageViewModel />
+    </ContentPage.BindingContext>
+
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Order" Order="Secondary" Priority="0" 
+                     Clicked="OnNoteAddedClicked" />
+        <ToolbarItem Text="Exit" Order="Secondary" Priority="1" 
+                     Clicked="Logout_Click" />
+
+        <ToolbarItem Text="Back to Login" Order="Secondary" Priority="2"  Clicked="Login_Click" />
+        
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Customer Line Man"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="" x:Name="QueqeNoStr"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout>
+                <ListView x:Name="listView"
+              Margin="20"
+              ItemSelected="OnListViewItemSelected">
+                    <ListView.Footer>
+                        <Label Text="Total" x:Name="SummaryView" />
+                    </ListView.Footer>
+                    
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Name}"></Label>
+
+                                    <Label Text="{Binding QuantityStr} {Binding CostPerUnitStr}"></Label>
+
+                                    <Label Text="{Binding CostPerUnitStr}"></Label>
+                                </StackLayout>
+
+                            </ViewCell>
+                              
+                            <!---
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="175" />
+                                    <ColumnDefinition Width="175" />
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                    
+                                <Label Text="{Binding Name}"></Label>
+                                <Label Text="{Binding QuantityStr}"></Label>
+                                <Label Text="{Binding CostPerUnitStr}"></Label>
+                            </Grid>
+
+                            -->
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+            <StackLayout>
+                <Button x:Name="bt_Cancel" Text="Cancel" Margin="15,15,0,0" Clicked="CancelOrder_Click"></Button>
+
+
+            </StackLayout>
+
+            
+            <StackLayout>
+                <Picker ItemsSource="{Binding DeviceList}" x:Name="deviceList"
+                    Title="Select Device"
+                    ItemDisplayBinding="{Binding .}"
+                    SelectedItem="{Binding SelectedDevice}" />
+                <Entry Text="{Binding PrintMessage}" IsVisible="False"
+                   Placeholder="Message"/>
+                <Button Text="Print"
+                    Command="{Binding PrintCommand}" />
+            </StackLayout>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.ListViewPage1">
+
+    <ContentPage.ToolbarItems>
+        <!--
+        <ToolbarItem x:Name="item_receive" Text="รับ Order "
+
+            Order="Primary" Clicked="ReceiveOrderkClick"
+            Priority="0" />
+-->
+        <ToolbarItem x:Name="item_view" Text="View Order"
+
+            Order="Secondary" Clicked="viewOrderClick"
+            Priority="0" />
+        <!--
+        <ToolbarItem x:Name="item_outofstock" Text="View Out of stock"
+
+            Order="Secondary" Clicked="outOfStockClick"
+            Priority="0" />
+-->
+    </ContentPage.ToolbarItems>
+
+    <StackLayout x:Name="MasterLayout">
+        <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
+            <Image x:Name="LoginIcon"  Source="LoginIcon.png" Margin="0,15,0,0"></Image>
+        </StackLayout>
+        <StackLayout x:Name="LabelStack" VerticalOptions="FillAndExpand">
+            <Label x:Name="lb_Header" Text="List Food" Margin="15,15,0,0" BackgroundColor="White" ></Label>
+            <Label x:Name="lb_Qno" Text="" Margin="15,15,0,0" BackgroundColor="White" ></Label>
+        </StackLayout>
+        <StackLayout x:Name="listItem"  Margin="20,35,20,20">
+            <ListView x:Name="MyListView">
+                <ListView.HeaderTemplate >
+                    <DataTemplate>
+                        <StackLayout>
+                            <ListView x:Name="listView2">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                
+                                <Grid.RowDefinitions>
+                                <!--
+                                    <RowDefinition Height="Auto" />
+                                  -->
+                                    <RowDefinition Height="300" />
+                                </Grid.RowDefinitions>
+                             
+                                <Grid.ColumnDefinitions>
+                                    <!--
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+-->
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="150*" />
+                                   <ColumnDefinition Width="80*" />
+
+                                </Grid.ColumnDefinitions>
+                                <!--
+                                <Image Grid.RowSpan="2"
+                                    -->   
+                                <Image Source="{Binding ImageUrl}"
+                                                     Aspect="AspectFill"
+                                             HeightRequest="700"
+                                             WidthRequest="100" />
+                               
+                                <Label Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" />
+                               <!--
+                                <Label Grid.Column="2" Text="{Binding Location}" />
+                               -->
+                                <!--<Entry x:Name="OrderNo" Placeholder="OrderNo" Text="0" />
+                            -->
+                                <!--
+                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Quantity}" VerticalOptions="End" />
+                                -->
+                                <Picker x:Name="{Binding Quantity}"  Grid.Column="2"
+                                        Title="เลือกจำนวน" TitleColor="Red" SelectedIndexChanged="selectPicker"  >
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:Int32}">
+                                            <x:Int32>0</x:Int32>
+                                            <x:Int32>1</x:Int32>
+                                            <x:Int32>2</x:Int32>
+                                            <x:Int32>3</x:Int32>
+                                            <x:Int32>4</x:Int32>
+                                            <x:Int32>5</x:Int32>
+                                            <x:Int32>6</x:Int32>
+                                            <x:Int32>7</x:Int32>
+
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+
+                            </Grid>
+                        </ViewCell>
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+
+
+        <StackLayout x:Name="FooterStack" VerticalOptions="Fill">
+            <Button x:Name="bt_Confirm" Text="Confirm" Margin="15,15,0,0" Clicked="ConfirmOrder_Click"></Button>
+            <Button x:Name="bt_Cancel" Text="Cancel" Margin="15,15,0,0" Clicked="CancelOrder_Click"></Button>
+        </StackLayout>
+
+
+
+    </StackLayout>
+</ContentPage>

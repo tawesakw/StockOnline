@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="StockOnline.View.OrderEntryPageLine">
+   
+    <!--
+    <ScrollView>
+        <StackLayout Margin="20,35,20,20">
+            <Label Text="Monkeys" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+            <Picker Title="Select a monkey" 
+                    TitleColor="Red"
+                    ItemsSource="{Binding Monkeys}" 
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelectedMonkey}" />
+            <Label Text="{Binding SelectedMonkey.Name}" 
+                   HorizontalOptions="Center" 
+                   Style="{DynamicResource TitleStyle}" />
+            <Label Text="{Binding SelectedMonkey.Location}"
+                   FontAttributes="Italic" HorizontalOptions="Center" />
+            <Image Source="{Binding SelectedMonkey.ImageUrl}" 
+                   HeightRequest="200" WidthRequest="200"
+                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding SelectedMonkey.Details}" 
+                   Style="{DynamicResource BodyStyle}" />
+        </StackLayout>
+    </ScrollView>
+    
+    -->
+
+    <ScrollView>
+        <StackLayout>
+            <StackLayout Margin="20,35,20,20">
+                <Label Text="Menu" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+
+                
+                <!--
+            
+            <Picker Title="เลือก MENU" 
+                    TitleColor="Red"
+                    ItemsSource="{Binding Foods}" 
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelectedFood}" /> -->
+
+                <!--
+            <Picker Title="เลือก MENU"
+                TitleColor="Red"
+                ItemsSource="{Binding Foods}" 
+                ItemDisplayBinding="{Binding Name}"    SelectedIndexChanged ="picker_SelectedIndexChanged"/>
+        -->
+                <Picker x:Name="picker"
+                    Title="เลือก MENU" TitleColor="Red" SelectedIndexChanged="picker_SelectedIndexChanged"  >
+                   <!--
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>กระเพราหมู เผ็ดน้อย</x:String>
+                            <x:String>กระเพราหมู เผ็ดกลาง</x:String>
+                            <x:String>กระเพราหมู เผ็ดมาก</x:String>
+                            <x:String>กระเพราหมูตุ๋น เผ็ดน้อย</x:String>
+                            <x:String>กระเพราหมูตุ๋น เผ็ดกลาง</x:String>
+                            <x:String>กระเพราหมูตุ๋น เผ็ดมาก</x:String>
+
+                        </x:Array>
+                    </Picker.ItemsSource>
+                    -->
+                </Picker>
+
+
+
+                <Label x:Name="Lbl_LevelSpicy" Text="ระดับความเผ็ด"/>
+                <Picker x:Name="pickerSpicy" Title="เลือก ระดับความเผ็ด" TitleColor="Red"   >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>ไม่เผ็ด</x:String>
+                            <x:String>เผ็ดน้อย</x:String>
+                            <x:String>เผ็ดกลาง</x:String>
+                            <x:String>เผ็ดมาก</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                
+                
+
+
+                <Label Text=""  x:Name="Name"
+                   HorizontalOptions="Center"  />
+
+                
+                <Label Text="" x:Name="Location"
+                   FontAttributes="Italic" HorizontalOptions="Center" />
+                <Image Source=""  x:Name="ImageUrl"
+                   HeightRequest="200" WidthRequest="200"
+                   HorizontalOptions="CenterAndExpand" />
+                
+                <Label Text="" x:Name="Details"     />
+                
+                
+                <Entry x:Name="Entry_CostPerUnit" Placeholder=""  IsVisible="False" />
+
+                <Entry x:Name="Entry_Quantity" Placeholder="จำนวน"  />
+
+
+                <Label Text=""  x:Name="NameEn" HorizontalOptions="Center" IsVisible="False" />
+                
+            </StackLayout>
+
+            <StackLayout x:Name="FooterStack" VerticalOptions="Fill">
+                <Button x:Name="bt_Confirm" Text="Confirm" Margin="15,15,0,0" Clicked="OnSaveButtonClicked"></Button>
+                <Button x:Name="bt_Cancel" Text="Cancel" Margin="15,15,0,0" Clicked="CancelOrder_Click"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

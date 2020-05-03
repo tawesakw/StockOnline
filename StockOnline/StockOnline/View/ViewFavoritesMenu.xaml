@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="StockOnline.View.ViewFavoritesMenu" Title="หน้า รายงาน Menu ยอดนิยม"
+             BackgroundColor="LightBlue">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Exit" Order="Secondary" Priority="0" 
+                     Clicked="Logout_Click" />
+
+        <ToolbarItem Text="Back to Login" Order="Secondary" Priority="1" 
+                     Clicked="Login_Click" />
+    </ContentPage.ToolbarItems>
+    
+
+    <ContentPage.Content>
+        <StackLayout>
+        
+   <StackLayout>
+        <Label Text="หน้า รายงาน Menu ยอดนิยม"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <forms:ChartView x:Name="MyBarChart" HeightRequest="500"   />
+
+           <ActivityIndicator x:Name="activityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Color="Blue" />
+
+
+            </StackLayout>
+
+
+   
+        </StackLayout>
+</ContentPage.Content>
+
+</ContentPage>
+    
+    
+
+    
+    
+

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.ChooseType" Title="Choose Type">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="item_exit" Text="Exit"
+            Order="Secondary" Clicked="exitClick"
+            Priority="0" />
+
+        <ToolbarItem Text="Login Again" Order="Secondary" Priority="1"  Clicked="Login_Click" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Please Choose Customer Type"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout x:Name="FooterStack" VerticalOptions="Fill">
+                <Button x:Name="bt_Confirm" Text="Line Man" Margin="15,15,0,0" Clicked="Lineman_Click"></Button>
+                <Button x:Name="bt_Cancel" Text="Walk in" Margin="15,15,0,0" Clicked="Walkin_Click"></Button>
+                <Button x:Name="bt_Waiting" Text="รายการรอชำระ" Margin="15,15,0,0" Clicked="Waiting_Click"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

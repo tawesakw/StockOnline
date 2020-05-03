@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.MaterialFoodAdmin" Title="หน้าบริหารจัดการวัตถุดิบ">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="0,10,0,0">
+                    <!--
+                <StackLayout Margin="0,10,0,0" >
+                    <Label Text="จัดการวัตถุดิบ" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" /> -->
+                    <Grid VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70" /> 
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="เลือก Food เพื่อจัดการวัตถุดิบ"  Grid.Row="0" Grid.Column="1"
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+
+                        <Button x:Name="bt_AddNew" Text="Add New Material" Margin="15,15,0,0" Clicked="OnAddButtonClicked" Grid.Row="1" Grid.Column="1" ></Button>
+                        <ListView x:Name="listView" Grid.Row="2" Grid.Column="1"
+                          Margin="5" 
+                        ItemSelected="OnListViewItemSelected">
+                              <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout>
+                                              <Label Text="{Binding NameEn}"></Label>
+                                          </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                      </ListView>
+
+                        <!--
+                        <ListView x:Name="listViewMaterialDetail" Grid.Row="3" Grid.Column="1"
+                          Margin="5"
+                        ItemSelected="OnListMaterialDetailItemSelected">
+                        <ListView.Footer>
+                            <Label Text="รายชื่อวัตถุดิบ" x:Name="SummaryView2" />
+                        </ListView.Footer>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding NameEn}"></Label>
+                                        <Label Text="{Binding QuantityStr}"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+-->
+                        <Button x:Name="bt_Confirm" Text="Add Material" Margin="15,15,0,0" Clicked="OnSaveButtonClicked" IsVisible="False" Grid.Row="3" Grid.Column="1" ></Button>
+                        <Button x:Name="bt_Cancel" Text="Cancel" Margin="15,15,0,0" Clicked="CancelOrder_Click" Grid.Row="4" Grid.Column="1"  IsVisible="False"></Button>
+
+
+                    </Grid>
+                </StackLayout>
+
+  
+                
+            </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

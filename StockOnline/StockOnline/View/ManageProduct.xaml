@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.ManageProduct">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="item_product" Text="Product"
+
+            Order="Secondary" Clicked="viewProductClick"
+            Priority="0" />
+
+        <ToolbarItem x:Name="item_user" Text="User"
+
+            Order="Secondary" Clicked="viewUserClick"
+            Priority="1" />
+
+        <ToolbarItem x:Name="item_material" Text="วัตถุดิบ"
+
+            Order="Secondary" Clicked="viewMaterialClick"
+            Priority="2" />
+
+
+        <ToolbarItem x:Name="item_material_food" Text="หน้าจัดการวัตถุดิบของอาหาร"
+
+            Order="Secondary" Clicked="viewMaterialFoodClick"
+            Priority="3" />
+        
+
+        <ToolbarItem x:Name="item_exit" Text="Exit"
+
+            Order="Secondary" Clicked="exitClick"
+            Priority="4" />
+
+        <ToolbarItem Text="Login Again" Order="Secondary" Priority="3"  Clicked="Login_Click" />
+        
+    </ContentPage.ToolbarItems>
+
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+
+        <Label Text="Menu ผู้จัดการ สินค้า และ User"></Label>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StockOnline.View.ProductAdmin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Margin="20,35,20,20">
+                    <Label Text="รายการ Menu " 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+
+                    <Label x:Name="Lbl_ProductName" Text="ชื่ออาหาร"/>
+                    <Entry x:Name="Entry_ProductName" Placeholder="ชื่อ"  />
+
+                    <Label x:Name="Lbl_ProductNameEn" Text="ชื่ออาหารภาษาอังกฤษ"/>
+                   <Entry x:Name="Entry_ProductNameEn" Placeholder="ชื่ออาหารภาษาอังกฤษ"  />
+
+                    <Label x:Name="Lbl_Detail" Text="คำอธิบาย"/>
+                    <Entry x:Name="Entry_Detail" Placeholder="คำอธิบาย"  />
+
+                    <Label x:Name="Lbl_ResName" Text="ชื่อร้าน"/>
+                    <Entry x:Name="Entry_Location" Placeholder="ชื่อร้าน"  />
+
+                    <Label x:Name="Lbl_Image" Text="รูป"/>
+                    <Entry x:Name="Entry_ImageURL" Placeholder="รูป"  />
+
+                    <Label x:Name="Lbl_CostP" Text="ราคาขาย"/>
+                    <Entry x:Name="Entry_Cost" Placeholder="ราคาขาย"  />
+
+
+                    <Label x:Name="Lbl_CustomerType" Text="ประเภทลูกค้า"/>
+                    <Picker x:Name="picker" Title="เลือก ประเภทลูกค้า" TitleColor="Red"   >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>LINE</x:String>
+                                <x:String>WALK</x:String>
+                                
+
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Label x:Name="Lbl_Quantity" Text="จำนวน"/>
+                    <Entry x:Name="Entry_Quantity" Placeholder="จำนวน"  />
+                    
+
+                </StackLayout>
+
+                <StackLayout x:Name="FooterStack" VerticalOptions="Fill">
+                    <Button x:Name="bt_Confirm" Text="Confirm" Margin="15,15,0,0" Clicked="OnSaveButtonClicked"></Button>
+                    <Button x:Name="bt_Cancel" Text="Cancel" Margin="15,15,0,0" Clicked="CancelOrder_Click"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>
